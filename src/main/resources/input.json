@@ -1,0 +1,145 @@
+{
+  "accommodationStateSchemaMigration": {
+    "id": "accomm_id_001",
+    "application_id": "application_id_001",
+    "property_id": "property_id_001",
+    "reason": "right_reason",
+    "request_date": "2017-02-03T01:02:03.000000004",
+    "prop_move_in_date": "2017-02-03T02:02:03.000000005",
+    "moved_in": "Y",
+    "moved_out": "N",
+    "start_date": "2017-02-03T03:02:03.000000006",
+    "end_date": "2017-02-03T04:02:03.000000007",
+    "travel_date": "2017-02-03T05:02:03.000000008",
+    "stage": "009"
+  },
+  "commonSdSchemaMigration": {
+    "serviceDeliveryType": {
+      "refDataValueId": 10306,
+      "refDataValueCode": "LTR",
+      "refDataValueShortDesc": "LTR",
+      "refDataValueLongDesc": "Leave to Remain in the UK"
+    },
+    "attributes": [
+      {
+        "internalHandle": {
+          "unique_identifier": "b3d5314a4e3760f143cee2b6f3fac9042439a8afd46924f0bbf1ea4f43a59c57",
+          "visibility_marker": "DEFAULT",
+          "interface_identifier": "PORT_REF_10017836"
+        },
+        "serviceDeliveryAttributeTypeCode": "PORT_REF",
+        "serviceDeliveryAttributeTypeId": 10701,
+        "attributeValueString": "ASU/007666",
+        "created": "2016-10-17T09:57:11.615407",
+        "createdBy": "ho_user"
+      },
+      {
+        "internalHandle": {
+          "unique_identifier": "fd2de53cb83e575cf3fefa90e2b1256e5bbd55361f5ad540934b2c8c09c958f2",
+          "visibility_marker": "DEFAULT",
+          "interface_identifier": "5409f7d3-53b3-4c18-b2e3-bd504cae77bc"
+        },
+        "serviceDeliveryAttributeTypeId": 1,
+        "serviceDeliveryAttributeTypeCode": "NASS_REF",
+        "attributeValueString": "NASS-10123",
+        "created": "2016-09-11T13:36:06.423",
+        "createdBy": "user1"
+      }
+    ],
+    "involvements": [
+      {
+        "internalHandle": {
+          "unique_identifier": "29c57c17897415ddeef9b0d8ee0be9d75636258e16258111e2853f7070246e56",
+          "visibility_marker": "DEFAULT",
+          "interface_identifier": "INVOLV_10151403"
+        },
+        "involvementRoleType": {
+          "refDataValueId": 11500,
+          "refDataValueCode": "APPLICANT",
+          "refDataValueShortDesc": "Applicant",
+          "refDataValueLongDesc": "Applicant"
+        },
+        "involvementRoleSubType": {
+          "refDataValueId": 75006,
+          "refDataValueCode": "OTHER PERSON",
+          "refDataValueShortDesc": "Other person",
+          "refDataValueLongDesc": "Other person"
+        },
+        "person": {
+          "personId": "PERSON_10151403",
+          "recentBiographics": [],
+          "createdDate": "2017-01-06T13:26:19.000Z",
+          "defaultBiographics": {
+            "identityHandle": {
+              "unique_identifier": "87eae402c1bbb1ae04c66897ecbb280e9bbf52144077b66cb0fe16f274532959",
+              "visibility_marker": "DEFAULT",
+              "interface_identifier": "CID_PEOPLE_10151403"
+            },
+            "title": {
+              "code": "DR",
+              "shortDescription": "Dr",
+              "longDescription": "Doctor"
+            },
+            "language": {
+              "code": "ENG",
+              "shortDescription": "",
+              "longDescription": "ENGLISH"
+            },
+            "givenName": "Dev",
+            "familyName": "Chambers",
+            "fullName": "Benjamin Chambers",
+            "gender": {
+              "code": "M",
+              "shortDescription": "Male",
+              "longDescription": "Male"
+            },
+            "dayOfBirth": 16,
+            "monthOfBirth": 1,
+            "yearOfBirth": 1987,
+            "photoUrl": "",
+            "nationality": {
+              "code": "USA",
+              "shortDescription": "",
+              "longDescription": "United States of America"
+            },
+            "placeOfBirth": "RINTELN",
+            "dateOfBirth": "1987-01-16",
+            "passport": null
+          }
+        },
+        "involvementAddresses": [
+          {
+            "postalAddressHandle": {
+              "visibility_marker": "DEFAULT",
+              "unique_identifier": "asdfsdffdaf0099889900",
+              "interface_identifier": "post_address_id_001"
+            }
+          }
+        ],
+        "lastUpdated": "2017-01-06T13:26:19.000Z",
+        "createdDate": "2017-01-06T13:26:19.000Z",
+        "personHandle": {
+          "unique_identifier": "87eae402c1bbb1ae04c66897ecbb280e9bbf52144077b66cb0fe16f274532959",
+          "visibility_marker": "DEFAULT",
+          "interface_identifier": "PERSON_10151403"
+        },
+        "notes": [],
+        "documentAttachments": [
+          {
+            "internalHandle": {
+              "unique_identifier": "651328bcb1c6728c669b4b59f293f8ff952ba9c726926abd06a07835373cd73c",
+              "visibility_marker": "DEFAULT",
+              "interface_identifier": "6c9c9a23-1906-4654-b5c0-5db9762b8b0c"
+            },
+            "verified": false,
+            "created": "2017-02-22T09:08:21.192",
+            "createdBy": null,
+            "correspondences": []
+          }
+        ],
+        "created": "2016-10-17T10:00:33.555283",
+        "createdBy": null
+      }
+    ]
+  }
+}
