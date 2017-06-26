@@ -1,0 +1,28 @@
+# Add any directories, files, or patterns you don't want to be tracked by version control
+######################
+# Directories
+######################
+/build/
+/bin/
+target/
+
+######################
+# OS Files
+######################
+.DS_Store
+
+######################
+# Eclipse
+######################
+.project
+.metadata
+.classpath
+.settings/
+
+######################
+# IntelliJ
+######################
+.idea
+*.iml
+
+.m2/
