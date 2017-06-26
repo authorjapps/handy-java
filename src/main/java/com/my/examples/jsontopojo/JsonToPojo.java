@@ -1,4 +1,4 @@
-package com.my.examples;
+package com.my.examples.jsontopojo;
 
 import java.io.File;
 import java.io.IOException;
