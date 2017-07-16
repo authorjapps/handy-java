@@ -13,7 +13,7 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 public class FolderServiceTest {
-    final String TEST_FOLDER_BASE = "/Users/nirmalchandra/dev/http_clone/github/handy-java/src/test/resources";
+    static String TEST_FOLDER_BASE = new FolderService().baseFolderFromConfig();
     final String TEST_FOLDER_LOCATION = TEST_FOLDER_BASE + "/test_folder";
     final String TEST_FOLDER_LOCATION_GIF = TEST_FOLDER_BASE + "/test_folder_gif";
     final String TEST_FOLDER_LOCATION_15 = TEST_FOLDER_BASE + "/test_folder_15";
@@ -28,6 +28,7 @@ public class FolderServiceTest {
     @Before
     public void setUpStuff() throws Exception {
         folderService = new FolderService();
+        TEST_FOLDER_BASE = folderService.baseFolderFromConfig();
     }
     
     @Test
@@ -89,7 +90,16 @@ public class FolderServiceTest {
         assertThat(fileTypes.get(1), is(".xyz"));
         assertThat(fileTypes.get(2), is(".docx"));
     }
-
+    
+    @Test
+    public void test_getBaseFolderFromConfig() throws Exception {
+        String baseFolderFromConfig =  folderService.baseFolderFromConfig();
+        assertThat(baseFolderFromConfig, is("/Users/nirmalchandra/dev/http_clone/github/handy-java/src/test/resources"));
+    
+        String value =  folderService.valueFromConfig("base.folder");
+        assertThat(value, is("/Users/nirmalchandra/dev/http_clone/github/handy-java/src/test/resources"));
+    }
+    
     @Test
     public void test_listAllUnSupportedFiles() throws Exception {
         List<FileMetaData> allFiles =  folderService.listAllUnSupportedFiles(TEST_FOLDER_LOCATION_UNSUPP);

@@ -82,9 +82,8 @@ public class FolderService {
     }
     
     public List<String> unSupportedFilesFromConfig() throws IOException {
-        Properties properties = loadProperties("service_config.properties");
         
-        final String unSupportedFilesByComma = properties.get("unsupported.file.types").toString();
+        final String unSupportedFilesByComma = valueFromConfig("unsupported.file.types");
         
         return Arrays.asList(unSupportedFilesByComma.split(","));
     }
@@ -104,4 +103,23 @@ public class FolderService {
         
         return PrettyPrinter.prettyPrint();
     }
+    
+    public String baseFolderFromConfig(){
+        return valueFromConfig("base.folder");
+    }
+    
+    public String valueFromConfig(String configKey){
+        Properties properties = null;
+        try {
+            properties = loadProperties("service_config.properties");
+        } catch (IOException e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
+        
+        final String configValue = properties.get(configKey).toString();
+        
+        return configValue;
+    }
+    
 }
