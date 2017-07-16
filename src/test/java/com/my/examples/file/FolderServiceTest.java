@@ -28,7 +28,7 @@ public class FolderServiceTest {
     @Before
     public void setUpStuff() throws Exception {
         folderService = new FolderService();
-        TEST_FOLDER_BASE = folderService.baseFolderFromConfig();
+        //TEST_FOLDER_BASE = folderService.baseFolderFromConfig();
     }
     
     @Test
