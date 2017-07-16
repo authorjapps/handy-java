@@ -14,6 +14,7 @@
     <modules>
         <module>file-reading</module>
         <module>json-to-pojo</module>
+        <module>design-patterns</module>
     </modules>
 
     <properties>
