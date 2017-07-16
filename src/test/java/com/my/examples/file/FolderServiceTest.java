@@ -96,7 +96,7 @@ public class FolderServiceTest {
         String baseFolderFromConfig =  folderService.baseFolderFromConfig();
         assertThat(baseFolderFromConfig, is("/Users/nirmalchandra/dev/http_clone/github/handy-java/src/test/resources"));
     
-        String value =  folderService.valueFromConfig("base.folder");
+        String value =  folderService.valueFromConfig("test.base.folder");
         assertThat(value, is("/Users/nirmalchandra/dev/http_clone/github/handy-java/src/test/resources"));
     }
     

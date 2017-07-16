@@ -105,7 +105,7 @@ public class FolderService {
     }
     
     public String baseFolderFromConfig(){
-        return valueFromConfig("base.folder");
+        return valueFromConfig("test.base.folder");
     }
     
     public String valueFromConfig(String configKey){
