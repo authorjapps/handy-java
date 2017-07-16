@@ -36,31 +36,6 @@ public class FolderService {
         return fileList;
     }
     
-    private String getMimeType(Path path) {
-        //return Files.probeContentType(path.toAbsolutePath()) != null ? Files.probeContentType(path) : "UNDEFINED-MIME";
-        return new MimetypesFileTypeMap().getContentType(path.getFileName().toString()) ;
-    }
-    
-    private String getExtension(Path filePath) {
-        final String fileName = filePath.getFileName().toString();
-    
-        if(fileName != null && !fileName.isEmpty()){
-            return fileName.substring(fileName.lastIndexOf("."));
-        }
-        
-        return null;
-    }
-    
-    private Long getSize(Path filePath) {
-        long size;
-        try {
-            size = Files.readAttributes(filePath, BasicFileAttributes.class).size();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        return size;
-    }
-    
     public List<FileMetaData> listAllUnSupportedFiles(String folderName) throws IOException {
         
         final List<FileMetaData> allFiles = listAllFiles(folderName);
@@ -88,22 +63,6 @@ public class FolderService {
         return Arrays.asList(unSupportedFilesByComma.split(","));
     }
     
-    private Properties loadProperties(String propFile) throws IOException {
-        Properties properties = new Properties();
-        properties.load(this.getClass().getClassLoader().getResourceAsStream(propFile));
-        
-        return properties;
-    }
-    
-    public String prettyPrintable(List<FileMetaData> files) {
-    
-        final List<String> fileNames = files.stream().map(thisFile -> thisFile.getFileName()).collect(Collectors.toList());
-    
-        PrettyPrinter.setFileNames(fileNames);
-        
-        return PrettyPrinter.prettyPrint();
-    }
-    
     public String baseFolderFromConfig(){
         return valueFromConfig("test.base.folder");
     }
@@ -120,6 +79,51 @@ public class FolderService {
         final String configValue = properties.get(configKey).toString();
         
         return configValue;
+    }
+    
+    public String prettyPrintable(List<FileMetaData> files) {
+        
+        final List<String> fileNames = files.stream().map(thisFile -> thisFile.getFileName()).collect(Collectors.toList());
+        
+        PrettyPrinter.setFileNames(fileNames);
+        
+        return PrettyPrinter.prettyPrint();
+    }
+
+    // ---------------------
+    // Private methods area
+    // ---------------------
+    
+    private Properties loadProperties(String propFile) throws IOException {
+        Properties properties = new Properties();
+        properties.load(this.getClass().getClassLoader().getResourceAsStream(propFile));
+        
+        return properties;
+    }
+    
+    private String getMimeType(Path path) {
+        //return Files.probeContentType(path.toAbsolutePath()) != null ? Files.probeContentType(path) : "UNDEFINED-MIME";
+        return new MimetypesFileTypeMap().getContentType(path.getFileName().toString()) ;
+    }
+    
+    private String getExtension(Path filePath) {
+        final String fileName = filePath.getFileName().toString();
+        
+        if(fileName != null && !fileName.isEmpty()){
+            return fileName.substring(fileName.lastIndexOf("."));
+        }
+        
+        return null;
+    }
+    
+    private Long getSize(Path filePath) {
+        long size;
+        try {
+            size = Files.readAttributes(filePath, BasicFileAttributes.class).size();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        return size;
     }
     
 }
